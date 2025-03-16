@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
 
     const handleLogin = async () => {
         const result = await signIn("credentials", {
-            username,
+            email,
             password,
             redirect: false,
         });
@@ -29,10 +29,10 @@ export default function LoginPage() {
         <div className="flex flex-col items-center justify-center min-h-screen">
             <h2 className="text-2xl mb-4 font-semibold">Login</h2>
             <Input
-                type="text"
-                placeholder="Username"
+                type="email"
+                placeholder="Email"
                 className="mb-2 w-64"
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
             />
             <Input
                 type="password"
