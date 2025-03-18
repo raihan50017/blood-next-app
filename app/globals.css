@@ -121,3 +121,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+html.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
